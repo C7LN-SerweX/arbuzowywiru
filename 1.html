@@ -9,39 +9,90 @@
         body {
             background-color: black;
             color: white;
-        }
-        #video-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 20px auto;
-            width: 80%;
-        }
-        video {
-            width: 45%;
-        }
-        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
             text-align: center;
+            overflow: hidden;
         }
+        
         h1 {
             font-size: 3em;
             margin-top: 20%;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Animacja fadeIn */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Video kontener */
+        #video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            width: 80%;
+            gap: 10px;
+        }
+
+        video {
+            width: 45%;
+            border: 5px solid #ff6347;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 99, 71, 0.6);
+            transition: transform 0.3s ease;
+        }
+
+        video:hover {
+            transform: scale(1.05);
+        }
+
+        /* Obrazek */
+        img {
+            width: 128px;
+            height: 128px;
+            margin-top: 20px;
+        }
+
+        /* Link do pobrania */
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #ff6347;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #ff4500;
         }
 
     </style>
 </head>
 <body>
     <h1>Witaj w Arbuzowym Wirusie!</h1>
+
     <div id="video-container">
-        <video controls>
+        <!-- Wideo z autoplay (bez muted) -->
+        <video autoplay loop>
             <source src="media/videos/1.mp4" type="video/mp4">
         </video>
-        <video controls>
+        <video autoplay loop>
             <source src="media/videos/2.mp4" type="video/mp4">
         </video>
-        <img src="media/gif/intro.gif" width="16" height="16" alt="Arbuz Ma Twój Komp">
-        <a href="media/videos/1.mp4" download>Zamknij Strone</a>
     </div>
+
+    <img src="media/gif/intro.gif" alt="Arbuz Ma Twój Komp">
+
+    <p><a href="media/videos/1.mp4" download>Zamknij Stronę</a></p>
+
     <script src="script.js"></script>
-    </body>
+</body>
 </html>
